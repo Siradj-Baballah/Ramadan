@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:wght@200,300,400,600,700,800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+header .logo{
+  position: relative;
+  color: #ff5e8e;
+  display: inline-block;
+  font-size: 2em;
+  text-decoration: none;
+  font-weight: 800;
+  opacity: 0;
+  animation: slide_left 0.5s linear forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slide_left {
+  0%{
+    transform: translateX(-100px);
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+
+
+header ul {
+  position: relative;
+  display: flex;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #0169b2;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-left: 10px;
+  padding: 8px 18px;
+  user-select: none;
+  opacity: 0;
+  animation: slide_top 0.5s linear forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes slide_top {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+header ul li a.active, header ul li a:hover {
+  background: #0169b2;
+  color: #fff;
+  border-radius: 30px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+}
+
+.content .text-box{
+  position: relative;
+  max-width: 550px;
+  margin-bottom: 40px;
+}
+
+.content .text-box h2{
+  color: #0169b2;
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  line-height: 1.2em;
+  font-weight: 700;
+  opacity: 0;
+  animation: slide_right 0.5s linear forwards;
+  animation-delay: 1.25s;
+}
+
+@keyframes slide_right {
+  0%{
+    transform: translateX(100px);
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+
+.content .text-box p{
+  font-size: 1.2em;
+  color: #333;
+  opacity: 0;
+  animation: slide_left 0.5s linear forwards;
+  animation-delay: 1.5s;
+}
+
+.content .text-box a{
+  display: inline-block;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  height: 60px;
+  margin-top: 20px;
+  padding: 15px 40px 15px 13px;
+  background: #ff5e8e;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 1s ease;
+  opacity: 0;
+  animation: slide_bottom 0.5s linear forwards;
+  animation-delay: 1.75s;
+}
+
+.content .text-box a:hover{
+  background: #0169b2;
+  padding: 15px 5px 15px 65px;
+}
+
+.content .text-box a span{
+  position: absolute;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  background: #0169b2;
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.content .text-box a:hover span{
+  background: #ff5e8e;
+  right: calc(100% - 55px)
+}
+
+@keyframes slide_bottom {
+  0%{
+    transform: rotate(45deg) translateY(200px);
+  }
+  100%{
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+.sci {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sci li {
+  list-style: none;
+}
+.sci li a {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  background: #0169b2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+  animation: slide_right 0.5s linear forwards;
+  animation-delay: calc(0.18s * var(--i));
+}
+
+.sci li a img {
+  filter: invert(1);
+  transform: scale(0.5);
+}
+
+.sci li a:hover {
+  background: #ff5e8e;
+  transform: translateY(-10px);
+}
+
+.mosque {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 700px;
+  transition: 1s ease;
+  opacity: 0;
+  animation: fade-in 1s linear forwards;
+  animation-delay: 2s;
+}
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
+
+
+
+
+/* Now, Make it responsive */
+
+@media (max-width: 1130px) and (min-width:991px) {
+
+  @keyframes fade-in {
+    0%{
+      opacity: 0;
+      transform: translateX(-80px);
+    }
+    100%{
+      opacity: 0.6;
+      transform: translateX(0px);
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  section{
+    padding: 150px 30px;
+  }
+
+  header{
+    padding: 20px;
+  }
+  .navigation {
+    display: none;
+  }
+  .navigation.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .content .text-box {
+    position: relative;
+    max-width: 400px;
+    margin-bottom: 145px;
+  }
+
+  header ul li {
+    margin: 10px 0;
+  }
+  header ul li a {
+    margin-left: 0;
+    font-size: 1.5em;
+    animation: slide_bottom2 0.5s linear forwards;
+    animation-delay: calc(0.2s * var(--i));
+  }
+
+  @keyframes slide_bottom2 {
+    0%{
+      transform: translateY(100px);
+    }
+    100%{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+
+  .toggle{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #0169b2 url(images/menu.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0;
+    animation: slide_left 0.70s linear forwards;
+    animation-delay: 0.5s;
+  }
+  .toggle.active{
+    background: #0169b2 url(./images/close.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .mosque{
+    max-width: 600px;
+  }
+  @keyframes fade-in {
+    0%{
+      opacity: 0;
+      transform: translateX(-80px);
+    }
+    100%{
+      opacity: 0.8;
+      transform: translateX(0px);
+    }
+  }
+
+  .content .text-box h2{
+    font-size: 2.5em;
+  }
+  .content .text-box p{
+    font-size: 1em;
+  }
+
+  .content .text-box a{
+    width: 165px;
+    height: 45px;
+    padding: 15px 50px 15px 13px;
+    font-size: 1.1em;
+  }
+
+  .content .text-box a:hover{
+    padding: 15px 5px 15px 50px;
+  }
+
+  .content .text-box a span{
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.1em;
+  }
+
+  .content .text-box a:hover span{
+    right: calc(100% - 35px)
+  }
+
+
+
+}
+
+@media (max-width: 600px) {
+  .mosque {
+    max-width: 400px;
+  }
+
+  @keyframes fade-in {
+    0%{
+      opacity: 0;
+      transform: translateX(-80px);
+    }
+    100%{
+      opacity: 0.4;
+      transform: translateX(0px);
+    }
+  }
+}
+
+/* Now make it animated */
